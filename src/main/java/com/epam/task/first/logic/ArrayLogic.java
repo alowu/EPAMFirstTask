@@ -52,4 +52,17 @@ public class ArrayLogic {
         return sum / amountOfElements;
     }
 
+    public int getSum(Array array) {
+
+        List<Integer> elements = array.getElements();
+
+        int sum = 0;
+
+        for (Integer element : elements) {
+            sum += element;
+        }
+
+        return sum;
+    }
+
 }
