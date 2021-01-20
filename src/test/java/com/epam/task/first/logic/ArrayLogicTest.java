@@ -4,11 +4,12 @@ import com.epam.task.first.entities.Array;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.security.PublicKey;
+
 import static java.lang.Math.abs;
 
 public class ArrayLogicTest {
 
-    private final double EXP = 1e6;
     private final ArrayLogic arrayLogic = new ArrayLogic();
 
     @Test
@@ -40,6 +41,7 @@ public class ArrayLogicTest {
 
         double result = arrayLogic.getAverage(array);
 
+        double EXP = 1e6;
         Assert.assertTrue(abs(result) - 3.3 <= EXP);
     }
 
@@ -51,6 +53,16 @@ public class ArrayLogicTest {
         int result = arrayLogic.getSum(array);
 
         Assert.assertEquals(76, result);
+    }
+
+    @Test
+    public void testGetAmountOfPositiveShouldFindAmountOfPositiveNumbersInArray() {
+
+        Array array = new Array(1, -2, 7, -15, 0, 81);
+
+        int result = arrayLogic.getAmountOfPositive(array);
+
+        Assert.assertEquals(3, result);
     }
 
 }
