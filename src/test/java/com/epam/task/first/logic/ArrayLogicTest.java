@@ -43,4 +43,14 @@ public class ArrayLogicTest {
         Assert.assertTrue(abs(result) - 3.3 <= EXP);
     }
 
+    @Test
+    public void testGetSumShouldCalculateSummaryOfArrayElements() {
+
+        Array array = new Array(1, 2, 7, -15, 0, 81);
+
+        int result = arrayLogic.getSum(array);
+
+        Assert.assertEquals(76, result);
+    }
+
 }
