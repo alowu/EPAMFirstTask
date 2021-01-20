@@ -70,7 +70,7 @@ public class ArrayLogicTest {
 
         Array array = new Array(1, -2, 7, -15, 0, 81);
 
-        int result = arrayLogic.getAmountOfPositive(array);
+        int result = arrayLogic.getAmountOfNegative(array);
 
         Assert.assertEquals(2, result);
     }
