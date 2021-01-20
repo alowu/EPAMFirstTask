@@ -80,4 +80,19 @@ public class ArrayLogic {
         return amount;
     }
 
+    public int getAmountOfNegative(Array array) {
+
+        List<Integer> elements = array.getElements();
+
+        int amount = 0;
+
+        for (Integer element : elements) {
+            if (element < 0) {
+                ++amount;
+            }
+        }
+
+        return amount;
+    }
+
 }
