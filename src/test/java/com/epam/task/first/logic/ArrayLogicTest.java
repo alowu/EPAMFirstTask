@@ -65,4 +65,14 @@ public class ArrayLogicTest {
         Assert.assertEquals(3, result);
     }
 
+    @Test
+    public void testGetAmountOfNegativeShouldFindAmountOfNegativeNumbersInArray() {
+
+        Array array = new Array(1, -2, 7, -15, 0, 81);
+
+        int result = arrayLogic.getAmountOfPositive(array);
+
+        Assert.assertEquals(2, result);
+    }
+
 }
