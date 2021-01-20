@@ -4,8 +4,11 @@ import com.epam.task.first.entities.Array;
 import org.junit.Assert;
 import org.junit.Test;
 
+import static java.lang.Math.abs;
+
 public class ArrayLogicTest {
 
+    private final double EXP = 1e6;
     private final ArrayLogic arrayLogic = new ArrayLogic();
 
     @Test
@@ -28,6 +31,16 @@ public class ArrayLogicTest {
 
         Assert.assertEquals(0, result);
 
+    }
+
+    @Test
+    public void testGetAverageShouldCalculateAverageValueInArray() {
+
+        Array array = new Array(1, 2, 7);
+
+        double result = arrayLogic.getAverage(array);
+
+        Assert.assertTrue(abs(result) - 3.3 <= EXP);
     }
 
 }

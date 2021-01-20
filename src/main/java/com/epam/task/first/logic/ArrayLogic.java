@@ -37,4 +37,19 @@ public class ArrayLogic {
 
     }
 
+    public double getAverage(Array array) {
+
+        List<Integer> elements = array.getElements();
+
+        int amountOfElements = 0;
+        Double sum = 0.;
+
+        for (Integer element : elements) {
+            sum += element;
+            amountOfElements++;
+        }
+
+        return sum / amountOfElements;
+    }
+
 }
