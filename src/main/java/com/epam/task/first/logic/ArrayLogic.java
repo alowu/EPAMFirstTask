@@ -46,7 +46,7 @@ public class ArrayLogic {
 
         for (Integer element : elements) {
             sum += element;
-            amountOfElements++;
+            ++amountOfElements;
         }
 
         return sum / amountOfElements;
@@ -63,6 +63,21 @@ public class ArrayLogic {
         }
 
         return sum;
+    }
+
+    public int getAmountOfPositive(Array array) {
+
+        List<Integer> elements = array.getElements();
+
+        int amount = 0;
+
+        for (Integer element : elements) {
+            if (element > 0) {
+                ++amount;
+            }
+        }
+
+        return amount;
     }
 
 }
