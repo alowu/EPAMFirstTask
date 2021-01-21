@@ -4,8 +4,6 @@ import com.epam.task.first.entities.Array;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.security.PublicKey;
-
 import static java.lang.Math.abs;
 
 public class ArrayLogicTest {
@@ -73,6 +71,16 @@ public class ArrayLogicTest {
         int result = arrayLogic.getAmountOfNegative(array);
 
         Assert.assertEquals(2, result);
+    }
+
+    @Test
+    public void testReplaceNegativeShouldReplaceNegativeNumbersWithTheirSquares() {
+        Array array = new Array(1, -2, 7, -15, 0, -9);
+        Array expected = new Array(1, 4, 7, 225, 0, 81);
+
+        Array result = arrayLogic.replaceNegative(array);
+
+        Assert.assertTrue(expected.equals(result));
     }
 
 }
