@@ -95,4 +95,20 @@ public class ArrayLogic {
         return amount;
     }
 
+    public Array replaceNegative(Array array) {
+
+        List<Integer> elements = array.getElements();
+
+        int i = 0;
+        for (Integer element : elements) {
+            if (element < 0) {
+                elements.set(i, element * element);
+            }
+            ++i;
+        }
+
+        array.setElements(elements);
+
+        return array;
+    }
 }
