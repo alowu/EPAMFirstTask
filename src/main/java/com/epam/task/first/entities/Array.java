@@ -3,6 +3,7 @@ package com.epam.task.first.entities;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class Array {
 
@@ -21,18 +22,16 @@ public class Array {
         return elements;
     }
 
-    public Integer getElement(int index) {
-        return this.elements.get(index);
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Array array = (Array) o;
+        return Objects.equals(getElements(), array.getElements());
     }
 
-    public boolean equals(Array array) {
-        int arrayLen = array.elements.size();
-        for (int i = 0; i < arrayLen; ++i){
-            if (this.getElement(i).intValue() != array.getElement(i).intValue()) {
-                return false;
-            }
-        }
-        return true;
+    @Override
+    public int hashCode() {
+        return Objects.hash(getElements());
     }
-
 }
