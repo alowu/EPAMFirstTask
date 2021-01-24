@@ -4,7 +4,7 @@ public class ArrayValidator {
 
     final String regex = "^[0-9 ]+$";
 
-    public boolean isValid(String line){
+    public boolean isValid(String line) throws NullPointerException {
         return line.matches(regex);
     }
 }
