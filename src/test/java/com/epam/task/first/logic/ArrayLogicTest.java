@@ -4,10 +4,9 @@ import com.epam.task.first.entities.Array;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static java.lang.Math.abs;
-
 public class ArrayLogicTest {
 
+    private final double DELTA = 1e6;
     private final ArrayLogic arrayLogic = new ArrayLogic();
 
     @Test
@@ -39,8 +38,7 @@ public class ArrayLogicTest {
 
         double result = arrayLogic.getAverage(array);
 
-        double EXP = 1e6;
-        Assert.assertTrue(abs(result) - 3.3 <= EXP);
+        Assert.assertEquals(3.3, result, DELTA);
     }
 
     @Test

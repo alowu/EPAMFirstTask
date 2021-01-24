@@ -41,13 +41,12 @@ public class ArrayLogic {
 
         List<Integer> elements = array.getElements();
 
-        int amountOfElements = 0;
-        Double sum = 0.;
+        double sum = 0.;
 
         for (Integer element : elements) {
             sum += element;
-            ++amountOfElements;
         }
+        int amountOfElements = elements.size();
 
         return sum / amountOfElements;
     }
@@ -107,8 +106,6 @@ public class ArrayLogic {
             ++i;
         }
 
-        array.setElements(elements);
-
-        return array;
+        return new Array(elements);
     }
 }
