@@ -78,7 +78,7 @@ public class ArrayLogicTest {
 
         Array result = arrayLogic.replaceNegative(array);
 
-        Assert.assertTrue(expected.equals(result));
+        Assert.assertEquals(expected, result);
     }
 
 }
