@@ -109,4 +109,14 @@ public class ArrayLogicTest {
 
         Assert.assertEquals(expected, result);
     }
+
+    @Test
+    public void testInsertionSortShouldSortArray() {
+        Array array = new Array(5, 3, 1, 2, 4);
+        Array expected = new Array(1, 2, 3, 4, 5);
+
+        Array result = arrayLogic.insertionSort(array);
+
+        Assert.assertEquals(expected, result);
+    }
 }
