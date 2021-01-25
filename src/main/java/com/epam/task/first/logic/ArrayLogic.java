@@ -109,12 +109,22 @@ public class ArrayLogic {
         return new Array(elements);
     }
 
-    public Array swap(Array array, int i1, int i2) throws ArrayIndexOutOfBoundsException {
-        List<Integer> buffer = array.getElements();
+    protected void swap(List<Integer> buffer, int i1, int i2) throws ArrayIndexOutOfBoundsException {
         Integer temp1 = buffer.get(i1);
         Integer temp2 = buffer.get(i2);
         buffer.set(i1, temp2);
         buffer.set(i2, temp1);
+    }
+
+    public Array bubbleSort(Array array) {
+        List<Integer> buffer = array.getElements();
+        for (int i = buffer.size() - 1; i > 0; --i) {
+            for (int j = 0; j < i; ++j) {
+                if (buffer.get(j) > buffer.get(j + 1)) {
+                    swap(buffer, j, j + 1);
+                }
+            }
+        }
         return new Array(buffer);
     }
 }
