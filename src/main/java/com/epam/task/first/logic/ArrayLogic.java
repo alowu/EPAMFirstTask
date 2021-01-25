@@ -111,8 +111,8 @@ public class ArrayLogic {
 
     public Array swap(Array array, int i1, int i2) throws ArrayIndexOutOfBoundsException {
         List<Integer> buffer = array.getElements();
-        int temp1 = buffer.get(i1);
-        int temp2 = buffer.get(i2);
+        Integer temp1 = buffer.get(i1);
+        Integer temp2 = buffer.get(i2);
         buffer.set(i1, temp2);
         buffer.set(i2, temp1);
         return new Array(buffer);
