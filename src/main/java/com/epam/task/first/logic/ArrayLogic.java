@@ -142,4 +142,21 @@ public class ArrayLogic {
         }
         return new Array(buffer);
     }
+
+    public Array selectionSort(Array array) {
+        List<Integer> buffer = array.getElements();
+        int length = buffer.size();
+        for (int i = 0; i < length; ++i) {
+            Integer min = buffer.get(i);
+            int minId = i;
+            for (int j = i + 1; j < length; ++j) {
+                if (buffer.get(j) < min) {
+                    min = buffer.get(j);
+                    minId = j;
+                }
+            }
+            swap(buffer, i, minId);
+        }
+        return new Array(buffer);
+    }
 }
