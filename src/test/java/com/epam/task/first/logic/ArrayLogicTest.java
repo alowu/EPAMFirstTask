@@ -81,4 +81,13 @@ public class ArrayLogicTest {
         Assert.assertEquals(expected, result);
     }
 
+    @Test
+    public void testSwapShouldSwapNumbersWithIndexesI1I2() {
+        Array array = new Array(1, 2, 3, 4, 5);
+        Array expected = new Array(5, 2, 3, 4, 1);
+
+        Array result = arrayLogic.swap(array, 0, 4);
+
+        Assert.assertEquals(expected, result);
+    }
 }
