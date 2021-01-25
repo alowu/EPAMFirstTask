@@ -11,9 +11,9 @@ import java.util.List;
 
 public class ArrayCreator {
 
-    private DataReader dataReader;
-    private ArrayValidator validator;
-    private ArrayParser parser;
+    private final DataReader dataReader;
+    private final ArrayValidator validator;
+    private final ArrayParser parser;
 
     public ArrayCreator(final DataReader dataReader, final ArrayValidator validator, final ArrayParser parser) {
         this.dataReader = dataReader;
