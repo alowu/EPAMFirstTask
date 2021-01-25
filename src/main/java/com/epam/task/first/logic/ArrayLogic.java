@@ -127,4 +127,19 @@ public class ArrayLogic {
         }
         return new Array(buffer);
     }
+
+    public Array insertionSort(Array array) {
+        List<Integer> buffer = array.getElements();
+        for (int i = 1; i < buffer.size(); ++i) {
+            Integer current = buffer.get(i);
+            int j = i - 1;
+            while (j >= 0 && current < buffer.get(j)) {
+                Integer prev = buffer.get(j);
+                buffer.set(j + 1, prev);
+                --j;
+            }
+            buffer.set(j + 1, current);
+        }
+        return new Array(buffer);
+    }
 }
