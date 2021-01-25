@@ -17,6 +17,7 @@ public class DataReader {
             while (scanner.hasNextLine()) {
                 lines.add(scanner.nextLine());
             }
+            scanner.close();
         } catch (IOException e) {
             throw new DataException(e.getMessage(), e);
         }
