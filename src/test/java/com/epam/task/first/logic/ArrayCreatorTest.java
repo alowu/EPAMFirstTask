@@ -18,8 +18,6 @@ import static org.mockito.Mockito.when;
 
 public class ArrayCreatorTest {
 
-    private final ArrayValidator validator = new ArrayValidator();
-    private final ArrayParser parser = new ArrayParser();
     private final static List<String> TEST_DATA = Arrays.asList("1 2 3", "1x 5 7", "87 91 57", "! 6 ?");
 
     @Test
@@ -39,31 +37,4 @@ public class ArrayCreatorTest {
         Assert.assertEquals(expected, result);
     }
 
-    @Test
-    public void testIsValidShouldValidateCorrectNumericStrings() {
-        String correct = "1 2 33";
-
-        boolean valid = validator.isValid(correct);
-
-        Assert.assertTrue(valid);
-    }
-
-    @Test
-    public void testIsValidShouldValidateWrongNumericStrings() {
-        String wrong = "? 666 what";
-
-        boolean notValid = validator.isValid(wrong);
-
-        Assert.assertFalse(notValid);
-    }
-
-    @Test
-    public void testParseShouldParseNumericStringIntoArray() {
-        String numbers = "1 2 3";
-        Array expected = new Array(1, 2, 3);
-
-        Array result = parser.parse(numbers);
-
-        Assert.assertEquals(expected, result);
-    }
 }
