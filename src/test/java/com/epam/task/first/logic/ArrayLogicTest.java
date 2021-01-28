@@ -4,6 +4,9 @@ import com.epam.task.first.entities.Array;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ArrayLogicTest {
 
     private final double DELTA = 1e6;
@@ -78,7 +81,52 @@ public class ArrayLogicTest {
 
         Array result = arrayLogic.replaceNegative(array);
 
-        Assert.assertTrue(expected.equals(result));
+        Assert.assertEquals(expected, result);
     }
 
+    @Test
+    public void testSwapShouldSwapNumbersWithIndexesI1I2() {
+        List<Integer> array = new ArrayList<>();
+        array.add(1);
+        array.add(2);
+        array.add(3);
+        array.add(4);
+        array.add(5);
+        Array expected = new Array(5, 2, 3, 4, 1);
+
+        arrayLogic.swap(array, 0, 4);
+        Array result = new Array(array);
+
+        Assert.assertEquals(expected, result);
+    }
+
+    @Test
+    public void testBubbleSortShouldSortArray() {
+        Array array = new Array(5, 3, 1, 2, 4);
+        Array expected = new Array(1, 2, 3, 4, 5);
+
+        Array result = arrayLogic.bubbleSort(array);
+
+        Assert.assertEquals(expected, result);
+    }
+
+    @Test
+    public void testInsertionSortShouldSortArray() {
+        Array array = new Array(5, 3, 1, 2, 4);
+        Array expected = new Array(1, 2, 3, 4, 5);
+
+        Array result = arrayLogic.insertionSort(array);
+
+        Assert.assertEquals(expected, result);
+    }
+
+    @Test
+    public void testSelectionSortShouldSortArray() {
+        Array array = new Array(5, 3, 1, 2, 4);
+        Array expected = new Array(1, 2, 3, 4, 5);
+
+        Array result = arrayLogic.selectionSort(array);
+
+        Assert.assertEquals(expected, result);
+    }
 }
